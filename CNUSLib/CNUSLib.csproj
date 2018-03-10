@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF5EA630-B17E-4127-9A09-40B9E3683D13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CNUSLib</RootNamespace>
+    <AssemblyName>CNUSLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DecryptionService.cs" />
+    <Compile Include="Entities\Content\Content.cs" />
+    <Compile Include="Entities\Content\ContentFSTInfo.cs" />
+    <Compile Include="Entities\Content\ContentFSTInfoParam.cs" />
+    <Compile Include="Entities\Content\ContentInfo.cs" />
+    <Compile Include="Entities\Content\ContentParam.cs" />
+    <Compile Include="Entities\FST\FST.cs" />
+    <Compile Include="Entities\FST\FSTEntry.cs" />
+    <Compile Include="Entities\FST\FSTEntryParam.cs" />
+    <Compile Include="Entities\FST\FSTService.cs" />
+    <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\TMD.cs" />
+    <Compile Include="Entities\TMDParam.cs" />
+    <Compile Include="Implementations\NUSDataProvider.cs" />
+    <Compile Include="Implementations\NUSDataProviderWUD.cs" />
+    <Compile Include="Implementations\WUD\Parser\WUDGamePartition.cs" />
+    <Compile Include="Implementations\WUD\Parser\WUDInfo.cs" />
+    <Compile Include="Implementations\WUD\Parser\WUDInfoParser.cs" />
+    <Compile Include="Implementations\WUD\Parser\WUDPartition.cs" />
+    <Compile Include="Implementations\WUD\Parser\WUDPartitionHeader.cs" />
+    <Compile Include="Implementations\WUD\Reader\WUDDiscReader.cs" />
+    <Compile Include="Implementations\WUD\Reader\WUDDiscReaderCompressed.cs" />
+    <Compile Include="Implementations\WUD\Reader\WUDDiscReaderSplitted.cs" />
+    <Compile Include="Implementations\WUD\Reader\WUDDiscReaderUncompressed.cs" />
+    <Compile Include="Implementations\WUD\WUDImage.cs" />
+    <Compile Include="Implementations\WUD\WUDImageCompressedInfo.cs" />
+    <Compile Include="NUSTitle.cs" />
+    <Compile Include="NUSTitleConfig.cs" />
+    <Compile Include="NUSTitleLoader.cs" />
+    <Compile Include="NUSTitleLoaderWUD.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utils\Arrays.cs" />
+    <Compile Include="Utils\ByteBuffer.cs" />
+    <Compile Include="Utils\Cryptography\AESDecryption.cs" />
+    <Compile Include="Utils\Cryptography\NUSDecryption.cs" />
+    <Compile Include="Utils\StreamUtils.cs" />
+    <Compile Include="Utils\Utils.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
