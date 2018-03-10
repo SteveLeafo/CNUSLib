@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class NUSTitleLoaderWUD : NUSTitleLoader
+    public class NUSTitleLoaderWUD : NUSTitleLoader
     {
         private NUSTitleLoaderWUD()
             : base()

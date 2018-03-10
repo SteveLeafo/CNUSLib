@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class NUSTitleConfig
+    public class NUSTitleConfig
     {
-        internal String inputPath;
-        internal WUDInfo WUDInfo;
-        internal Ticket ticket;
+        public String inputPath;
+        public WUDInfo WUDInfo;
+        public Ticket ticket;
 
-        internal int version = Settings.LATEST_TMD_VERSION;
-        internal long titleID = 0x0L;
+        public int version = Settings.LATEST_TMD_VERSION;
+        public long titleID = 0x0L;
 
         //private WoomyInfo woomyInfo;
     }

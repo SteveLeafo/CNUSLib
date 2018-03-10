@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class ContentFSTInfoParam
+    public class ContentFSTInfoParam
     {
-        internal long offsetSector;
-        internal long sizeSector;
-        internal long ownerTitleID;
-        internal int groupID;
-        internal byte unkown;
+        public long offsetSector;
+        public long sizeSector;
+        public long ownerTitleID;
+        public int groupID;
+        public byte unkown;
     }
 }

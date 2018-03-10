@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class WUDInfo
+    public class WUDInfo
     {
-        internal byte[] titleKey;
+        public byte[] titleKey;
 
-        internal WUDDiscReader WUDDiscReader;
-        internal Dictionary<string, WUDPartition> partitions = new Dictionary<string, WUDPartition>();
+        public WUDDiscReader WUDDiscReader;
+        public Dictionary<string, WUDPartition> partitions = new Dictionary<string, WUDPartition>();
 
-        internal string gamePartitionName;
+        public string gamePartitionName;
 
         private WUDGamePartition cachedGamePartition = null;
 
-        public WUDInfo(byte[] titleKey, WudTool.WUDDiscReader discReader)
+        public WUDInfo(byte[] titleKey, WUDDiscReader discReader)
         {
             // TODO: Complete member initialization
             this.titleKey = titleKey;

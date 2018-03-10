@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WudTool
+namespace CNUSLib
 {
-    class WUDGamePartition : WUDPartition
+    public class WUDGamePartition : WUDPartition
     {
-        internal byte[] rawTMD;
-        internal byte[] rawCert;
-        internal byte[] rawTicket;
+        public byte[] rawTMD;
+        public byte[] rawCert;
+        public byte[] rawTicket;
 
         public WUDGamePartition(String partitionName, long partitionOffset, byte[] rawTMD, byte[] rawCert, byte[] rawTicket) : base(partitionName, partitionOffset)
         {

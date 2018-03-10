@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
     public class Utils
     {
@@ -79,7 +79,7 @@ namespace WudTool
             return data;
         }
 
-        internal static bool checkXML(System.IO.FileInfo fileInfo)
+        public static bool checkXML(System.IO.FileInfo fileInfo)
         {
             throw new NotImplementedException();
         }

@@ -5,16 +5,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    class NUSTitle
+    public class NUSTitle
     {
-        internal FST FST;
-        internal TMD TMD;
-        internal Ticket ticket;
+        public FST FST;
+        public TMD TMD;
+        public Ticket ticket;
 
-        internal bool skipExistingFiles = true;
-        internal NUSDataProvider dataProvider = null;
+        public bool skipExistingFiles = true;
+        public NUSDataProvider dataProvider = null;
 
         public List<FSTEntry> getAllFSTEntriesFlatByContentID(short ID)
         {

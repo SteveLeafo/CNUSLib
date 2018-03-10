@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WudTool
+namespace CNUSLib
 {
-    class Content
+    public class Content
     {
         public static short CONTENT_FLAG_UNKWN1 = 0x4000;
         public static short CONTENT_HASHED = 0x0002;
         public static short CONTENT_ENCRYPTED = 0x0001;
         public static int CONTENT_SIZE = 0x30;
 
-        internal int ID;
-        internal short index;
-        internal short type;
+        public int ID;
+        public short index;
+        public short type;
 
-        internal long encryptedFileSize;
-        internal byte[] SHA2Hash;
+        public long encryptedFileSize;
+        public byte[] SHA2Hash;
 
-        internal List<FSTEntry> entries = new List<FSTEntry>();
+        public List<FSTEntry> entries = new List<FSTEntry>();
 
-        internal ContentFSTInfo contentFSTInfo;
+        public ContentFSTInfo contentFSTInfo;
 
-        internal Content(ContentParam param)
+        public Content(ContentParam param)
         {
             this.ID = param.ID;
             this.index = param.Index;
@@ -109,7 +109,7 @@ namespace WudTool
         }
 
         /**
-         * Adds a content to the internal entry list.
+         * Adds a content to the public entry list.
          * 
          * @param entry
          *            that will be added to the content list

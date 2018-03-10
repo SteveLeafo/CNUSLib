@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace WudTool
+namespace CNUSLib
 {
     class WUDDiscReaderUncompressed : WUDDiscReader
     {
         WUDImage image;
-        internal WUDDiscReaderUncompressed(WUDImage wudFile)
+        public WUDDiscReaderUncompressed(WUDImage wudFile)
         {
             image = wudFile;
         }

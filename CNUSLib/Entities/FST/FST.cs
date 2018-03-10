@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class FST
+    public class FST
     {
-        internal FSTEntry root = FSTEntry.getRootFSTEntry();
+        public FSTEntry root = FSTEntry.getRootFSTEntry();
 
-        internal int unknown;
-        internal int contentCount;
+        public int unknown;
+        public int contentCount;
 
-        internal Dictionary<int, ContentFSTInfo> contentFSTInfos = new Dictionary<int, ContentFSTInfo>();
+        public Dictionary<int, ContentFSTInfo> contentFSTInfos = new Dictionary<int, ContentFSTInfo>();
 
         private FST(int unknown, int contentCount)
         {

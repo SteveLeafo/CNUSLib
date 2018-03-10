@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class WUDPartition
+    public class WUDPartition
     {
-        internal WUDPartitionHeader partitionHeader;
+        public WUDPartitionHeader partitionHeader;
 
-        internal string partitionName;
-        internal long partitionOffset;
+        public string partitionName;
+        public long partitionOffset;
 
         public WUDPartition(string partitionName, long partitionOffset)
         {

@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class FSTEntryParam
+    public class FSTEntryParam
     {
-        internal String Filename = "";
-        internal String Path = "";
+        public String Filename = "";
+        public String Path = "";
 
-        internal FSTEntry Parent = null;
+        public FSTEntry Parent = null;
 
-        internal short Flags;
+        public short Flags;
 
-        internal long FileSize = 0;
-        internal long FileOffset = 0;
+        public long FileSize = 0;
+        public long FileOffset = 0;
 
-        internal Content Content = null;
+        public Content Content = null;
 
-        internal bool isDir = false;
-        internal bool isRoot = false;
-        internal bool notInPackage = false;
+        public bool isDir = false;
+        public bool isRoot = false;
+        public bool notInPackage = false;
 
-        internal short ContentFSTID = 0;
+        public short ContentFSTID = 0;
     }
 }

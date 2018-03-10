@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class ContentParam
+    public class ContentParam
     {
-        internal int ID;
-        internal short Index;
-        internal short Type;
+        public int ID;
+        public short Index;
+        public short Type;
 
-        internal long EncryptedFileSize;
-        internal byte[] SHA2Hash;
+        public long EncryptedFileSize;
+        public byte[] SHA2Hash;
 
-        internal ContentFSTInfo ContentFSTInfo;
+        public ContentFSTInfo ContentFSTInfo;
     }
 }

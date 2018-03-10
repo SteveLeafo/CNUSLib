@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
     public class FSTService
     {
@@ -13,7 +13,7 @@ namespace WudTool
         {
         }
 
-        internal static void parseFST(FSTEntry rootEntry, byte[] fstSection, byte[] namesSection, Dictionary<int, Content> contentsByIndex,
+        public static void parseFST(FSTEntry rootEntry, byte[] fstSection, byte[] namesSection, Dictionary<int, Content> contentsByIndex,
                 Dictionary<int, ContentFSTInfo> contentsFSTByIndex)
         {
             int totalEntries = Utils.SwapEndianness(BitConverter.ToInt32(fstSection, 0x08));

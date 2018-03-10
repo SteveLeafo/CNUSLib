@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class Arrays
+    public class Arrays
     {
-        internal static byte[] copyOfRange(byte[] namesSection, int from, int to)
+        public static byte[] copyOfRange(byte[] namesSection, int from, int to)
         {
             if (from == to || from >= namesSection.Length)
             {
@@ -19,7 +19,7 @@ namespace WudTool
             return returnValue;
         }
 
-        internal static byte[] copyOf(byte[] curEntry, int p)
+        public static byte[] copyOf(byte[] curEntry, int p)
         {
             byte[] returnValue = new byte[p];
             Array.ConstrainedCopy(curEntry, 0, returnValue, 0, p);

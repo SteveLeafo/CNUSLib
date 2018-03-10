@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class DecryptionService
+    public class DecryptionService
     {
 
         private static Dictionary<NUSTitle, DecryptionService> instances = new Dictionary<NUSTitle, DecryptionService>();

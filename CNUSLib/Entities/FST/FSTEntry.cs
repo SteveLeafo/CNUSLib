@@ -4,32 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class FSTEntry
+    public class FSTEntry
     {
         public static byte FSTEntry_DIR = (byte)0x01;
         public static byte FSTEntry_notInNUS = (byte)0x80;
 
-        internal String filename;
-        internal String path;
-        internal FSTEntry parent;
+        public String filename;
+        public String path;
+        public FSTEntry parent;
 
-        internal List<FSTEntry> Children = new List<FSTEntry>();
+        public List<FSTEntry> Children = new List<FSTEntry>();
 
-        internal short flags;
+        public short flags;
 
-        internal long fileSize;
-        internal long fileOffset;
+        public long fileSize;
+        public long fileOffset;
 
-        internal Content content;
+        public Content content;
 
-        internal bool isDir;
-        internal bool isRoot;
-        internal bool isNotInPackage;
+        public bool isDir;
+        public bool isRoot;
+        public bool isNotInPackage;
 
         short _contentFSTID;
-        internal short contentFSTID
+        public short contentFSTID
         {
             get
             {
@@ -42,7 +42,7 @@ namespace WudTool
         }
 
 
-        internal FSTEntry(FSTEntryParam fstParam)
+        public FSTEntry(FSTEntryParam fstParam)
         {
             this.filename = fstParam.Filename;
             this.path = fstParam.Path;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 
 
-namespace WudTool
+namespace CNUSLib
 {
     class NUSDecryption : AESDecryption
     {
@@ -146,6 +146,7 @@ namespace WudTool
 
             long wrote = 0;
             int inBlockBuffer;
+            inputStream.Seek(0, SeekOrigin.Begin);
             do
             {
                 //inBlockBuffer = StreamUtils.getChunkFromStream(inputStream, encryptedBlockBuffer, overflow, BLOCKSIZE);

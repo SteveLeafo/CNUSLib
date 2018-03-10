@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class WUDDiscReaderCompressed : WUDDiscReader
+    public class WUDDiscReaderCompressed : WUDDiscReader
     {
-        internal WUDDiscReaderCompressed(WUDImage wudFile)
+        public WUDDiscReaderCompressed(WUDImage wudFile)
         {
         }
 

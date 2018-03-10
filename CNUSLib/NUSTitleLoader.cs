@@ -6,9 +6,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal abstract class NUSTitleLoader
+    public abstract class NUSTitleLoader
     {
         protected NUSTitleLoader()
         {

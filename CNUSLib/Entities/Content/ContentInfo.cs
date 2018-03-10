@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    class ContentInfo
+    public class ContentInfo
     {
         public static int CONTENT_INFO_SIZE = 0x24;
 

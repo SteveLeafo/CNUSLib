@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    class WUDImage
+    public class WUDImage
     {
         public static long WUD_FILESIZE = 0x5D3A00000L;
 
-        internal FileInfo fileHandle;
-        internal WUDImageCompressedInfo compressedInfo = null;
-        internal FileStream fileStream;
-        internal bool isCompressed;
-        internal bool isSplitted;
+        public FileInfo fileHandle;
+        public WUDImageCompressedInfo compressedInfo = null;
+        public FileStream fileStream;
+        public bool isCompressed;
+        public bool isSplitted;
 
-        internal long inputFileSize = 0L;
-        internal WUDDiscReader WUDDiscReader;
+        public long inputFileSize = 0L;
+        public WUDDiscReader WUDDiscReader;
 
         public WUDImage(FileInfo file)
         {

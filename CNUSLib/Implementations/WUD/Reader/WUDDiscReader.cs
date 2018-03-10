@@ -2,9 +2,9 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal abstract class WUDDiscReader
+    public abstract class WUDDiscReader
     {
         public void readDecryptedToOutputStream(Stream outputStream, long clusterOffset, long fileOffset, long size, byte[] key, byte[] IV)
         {

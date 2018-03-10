@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal abstract class NUSDataProvider
+    public abstract class NUSDataProvider
     {
         private NUSTitle NUSTitle;
 

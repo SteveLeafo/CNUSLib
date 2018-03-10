@@ -6,17 +6,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    class Ticket
+    public class Ticket
     {
         private static int POSITION_KEY = 0x1BF;
         private static int POSITION_TITLEID = 0x1DC;
 
-        internal byte[] encryptedKey;
-        internal byte[] decryptedKey;
+        public byte[] encryptedKey;
+        public byte[] decryptedKey;
 
-        internal byte[] IV;
+        public byte[] IV;
 
         private Ticket(byte[] encryptedKey, byte[] decryptedKey, byte[] IV)
         {

@@ -4,28 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class WUDImageCompressedInfo
+    public class WUDImageCompressedInfo
     {
         public const int WUX_HEADER_SIZE = 0x20;
         public const int WUX_MAGIC_0 = 0x30585557;
         public const int WUX_MAGIC_1 = 0x1099d02e;
         public const int SECTOR_SIZE = 0x8000;
 
-        internal int sectorSize;
-        internal long uncompressedSize;
-        internal int flags;
+        public int sectorSize;
+        public long uncompressedSize;
+        public int flags;
 
-        internal long indexTableEntryCount;
-        internal long offsetIndexTable = WUX_HEADER_SIZE;
-        internal long offsetSectorArray;
-        internal long indexTableSize;
+        public long indexTableEntryCount;
+        public long offsetIndexTable = WUX_HEADER_SIZE;
+        public long offsetSectorArray;
+        public long indexTableSize;
 
         bool valid;
         public Dictionary<int, long> indexTable;
 
-        internal WUDImageCompressedInfo(byte[] headData)
+        public WUDImageCompressedInfo(byte[] headData)
         {
             if (headData.Length < WUX_HEADER_SIZE)
             {
@@ -69,7 +69,7 @@ namespace WudTool
 
 
 
-        internal bool isWUX()
+        public bool isWUX()
         {
             return valid;
         }

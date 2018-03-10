@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    class WUDPartitionHeader
+    public class WUDPartitionHeader
     {
-        internal bool calculatedHashes = false;
-        internal Dictionary<short, byte[]> h3Hashes = new Dictionary<short, byte[]>();
-        internal byte[] rawData;
+        public bool calculatedHashes = false;
+        public Dictionary<short, byte[]> h3Hashes = new Dictionary<short, byte[]>();
+        public byte[] rawData;
 
         private WUDPartitionHeader()
         {

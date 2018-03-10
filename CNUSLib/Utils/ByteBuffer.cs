@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class ByteBuffer
+    public class ByteBuffer
     {
         byte[] buffer;
-        internal int currentPos;
+        public int currentPos;
 
         public ByteBuffer(int length)
         {
             buffer = new byte[length];
         }
 
-        internal static ByteBuffer allocate(int length)
+        public static ByteBuffer allocate(int length)
         {
             return new ByteBuffer(length);
         }
 
-        internal void put(byte[] input)
+        public void put(byte[] input)
         {
             if (input.Length == buffer.Length)
             {
@@ -29,44 +29,44 @@ namespace WudTool
             }
         }
 
-        internal void position(int p)
+        public void position(int p)
         {
             currentPos = p;
         }
 
-        internal int getInt(int p)
+        public int getInt(int p)
         {
             currentPos = p + 4;
             return Utils.SwapEndianness(BitConverter.ToInt32(buffer, p));
         }
 
-        internal int getInt()
+        public int getInt()
         {
             int l = Utils.SwapEndianness(BitConverter.ToInt32(buffer, currentPos));
             currentPos += 4;
             return l;
         }
 
-        internal byte get()
+        public byte get()
         {
             currentPos++;
             return buffer[currentPos - 1];
         }
 
-        internal short getShort(int p)
+        public short getShort(int p)
         {
             currentPos = p + 2;
             return Utils.SwapEndianness(BitConverter.ToInt16(buffer, p));
         }
 
-        internal short getShort()
+        public short getShort()
         {
             short l = Utils.SwapEndianness(BitConverter.ToInt16(buffer, currentPos));
             currentPos += 2;
             return l;
         }
 
-        internal long getLong(int p)
+        public long getLong(int p)
         {
             currentPos = p + 4;
             byte[] bytes = new byte[8];
@@ -76,7 +76,7 @@ namespace WudTool
             return l;
         }
 
-        internal long getLong()
+        public long getLong()
         {
             byte[] bytes = new byte[8];
             Array.ConstrainedCopy(buffer, currentPos, bytes, 0, 8);
@@ -87,7 +87,7 @@ namespace WudTool
             currentPos += 8;
             return l1;
         }
-        internal long getLong2()
+        public long getLong2()
         {
             byte[] bytes = new byte[8];
             Array.ConstrainedCopy(buffer, currentPos, bytes, 0, 8);
@@ -97,7 +97,7 @@ namespace WudTool
             return l;
         }
 
-        internal void get(byte[] dst, int offset, int length)
+        public void get(byte[] dst, int offset, int length)
         {
             if (offset == 0)
             {
@@ -114,7 +114,7 @@ namespace WudTool
             }
         }
 
-        internal byte[] putLong(long l)
+        public byte[] putLong(long l)
         {
             byte[] ar = BitConverter.GetBytes(l).Reverse().ToArray();
             Array.ConstrainedCopy(ar, 0, buffer, currentPos, 0x08);
@@ -122,10 +122,10 @@ namespace WudTool
         }
 
 
-        internal byte[] putShort(short p)
+        public byte[] putShort(short p)
         {
             byte[] ar = BitConverter.GetBytes(p).Reverse().ToArray();
-            Array.ConstrainedCopy(ar, 0, buffer, currentPos, 0x08);
+            Array.ConstrainedCopy(ar, 0, buffer, currentPos, 0x02);
             return buffer;
         }
     }

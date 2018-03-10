@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WudTool
+namespace CNUSLib
 {
-    internal class WUDInfoParser
+    public class WUDInfoParser
     {
         public static byte[] DECRYPTED_AREA_SIGNATURE = new byte[] { (byte)0xCC, (byte)0xA6, (byte)0xE6, 0x7B };
         public static byte[] PARTITION_FILE_TABLE_SIGNATURE = new byte[] { 0x46, 0x53, 0x54, 0x00 }; // "FST"
