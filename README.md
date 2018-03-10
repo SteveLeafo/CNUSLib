@@ -2,11 +2,11 @@
 
 [JNUSLib](https://github.com/Maschell/JNUSLib) is a library written in Java to handle NUS Contents (.app, tmd, tik, cert files) from different sources. It can be easily used in other Applications and is directed to devolpers. It's based on JNUSTool, but is heavily rewritten and extented with even more features.
 
-CNUSLib A partial port to .NET (C#) of JNUSLib
+CNUSLib is a partial port to .NET (C#) of JNUSLib
 
 # Differences to JNUSLib
 
-At the moment, CNUSLib only supports the decryping adn extracting from WUD files.
+At the moment, CNUSLib only supports decryption and extraction from WUD files.
 
 The following features have not yet been ported to .NET (though they are planned to be):
  - Support for split WUD files
@@ -17,7 +17,7 @@ The following features have not yet been ported to .NET (though they are planned
  
 # Differences to JNUSLib
 
-CNUSLib was writted to add image file support to [Budfor](https://github.com/Maschell/JNUSLib) you should check it out!
+CNUSLib was writted to add image file support to [Budford](https://github.com/Maschell/JNUSLib) you should check it out!
 
 # Credits
 SteveLeafo
