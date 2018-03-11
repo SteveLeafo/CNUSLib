@@ -52,7 +52,7 @@ namespace CNUSLib
                 usedFileOffset += copySize;
             } while (totalread < usedSize);
 
-            //outputStream.close();
+            outputStream.Close();
         }
 
         public byte[] readEncryptedToByteArray(long offset, long fileoffset, long size, long shmooker = 0)
