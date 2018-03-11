@@ -53,6 +53,7 @@ namespace CNUSLib
 
             // We have to make sure, that the list is ordered by index
             List<Content> contents = new List<Content>(allContents.Values);
+            contents.Sort(delegate(Content c1, Content c2) { return c1.index.CompareTo(c2.index); });
             // TODO
             //Collections.sort(contents, new Comparator<Content>() {
             //    @Override

@@ -52,6 +52,19 @@ namespace CNUSLib
             calculateOffsets();
         }
 
+        public static WUDImageCompressedInfo getDefaultCompressedInfo()
+        {
+            return new WUDImageCompressedInfo(SECTOR_SIZE, 0, WUDImage.WUD_FILESIZE);
+        }
+
+        public WUDImageCompressedInfo(int sectorSize, int flags, long uncompressedSize)
+        {
+            this.sectorSize = sectorSize;
+            this.flags = flags;
+            this.uncompressedSize = uncompressedSize;
+            valid = true;
+            calculateOffsets();
+        }
         private void calculateOffsets()
         {
             indexTableEntryCount = (uncompressedSize + sectorSize - 1) / sectorSize;
@@ -65,13 +78,31 @@ namespace CNUSLib
             indexTableSize = (0x04 * indexTableEntryCount);
         }
 
-
-
-
-
         public bool isWUX()
         {
             return valid;
+        }
+
+        public long getSectorIndex(int sectorIndex)
+        {
+            return indexTable[sectorIndex];
+        }
+
+        public void setIndexTable(Dictionary<int, long> indexTable)
+        {
+            this.indexTable = indexTable;
+        }
+
+        public byte[] getHeaderAsBytes()
+        {
+            ByteBuffer result = ByteBuffer.allocate(WUX_HEADER_SIZE);
+            //result.order(ByteOrder.LITTLE_ENDIAN);
+            result.putInt(WUX_MAGIC_0);
+            result.putInt(WUX_MAGIC_1);
+            result.putInt(sectorSize);
+            result.putInt(flags);
+            result.putLong(uncompressedSize);
+            return result.array();
         }
     }
 }

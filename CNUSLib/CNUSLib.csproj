@@ -72,11 +72,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Utils\Arrays.cs" />
+    <Compile Include="Utils\ByteArrayBuffer.cs" />
+    <Compile Include="Utils\ByteArrayWrapper.cs" />
     <Compile Include="Utils\ByteBuffer.cs" />
     <Compile Include="Utils\Cryptography\AESDecryption.cs" />
     <Compile Include="Utils\Cryptography\NUSDecryption.cs" />
+    <Compile Include="Utils\HashUtil.cs" />
     <Compile Include="Utils\StreamUtils.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <Compile Include="WUDService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

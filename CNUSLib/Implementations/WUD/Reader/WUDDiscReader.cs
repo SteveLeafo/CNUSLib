@@ -6,6 +6,13 @@ namespace CNUSLib
 {
     public abstract class WUDDiscReader
     {
+        protected WUDImage image;
+
+        public WUDDiscReader(WUDImage image)
+        {
+            this.image = image;
+        }
+
         public void readDecryptedToOutputStream(Stream outputStream, long clusterOffset, long fileOffset, long size, byte[] key, byte[] IV)
         {
             byte[] usedIV = IV;
@@ -95,6 +102,17 @@ namespace CNUSLib
             //},"readEncryptedToInputStream@" + this.hashCode()).start();
 
             //return in;
+        }
+
+        public BinaryReader getRandomAccessFileStream()
+        {
+            if (image == null || image.fileHandle == null)
+            {
+                //log.warning("No image or image filehandle set.");
+                //System.exit(1); // TODO: NOOOOOOOOOOOOO/
+            }
+            FileStream fs = new FileStream(image.fileHandle.FullName, FileMode.Open);
+            return new BinaryReader(fs);
         }
     }
 }

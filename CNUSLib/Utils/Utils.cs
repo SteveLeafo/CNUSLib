@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,6 +83,11 @@ namespace CNUSLib
         public static bool checkXML(System.IO.FileInfo fileInfo)
         {
             throw new NotImplementedException();
+        }
+
+        internal static void createDir(string usedOutputFolder)
+        {
+            Directory.CreateDirectory(usedOutputFolder);
         }
     }
 }

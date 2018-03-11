@@ -11,7 +11,7 @@ namespace CNUSLib
         public static long WUD_SPLITTED_FILE_SIZE = 0x100000L * 0x800L;
         public static long NUMBER_OF_FILES = 12;
 
-        public WUDDiscReaderSplitted(WUDImage wudFile)
+        public WUDDiscReaderSplitted(WUDImage wudFile) : base(wudFile)
         {
         }
 

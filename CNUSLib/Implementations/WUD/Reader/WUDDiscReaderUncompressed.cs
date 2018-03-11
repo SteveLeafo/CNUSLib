@@ -8,10 +8,8 @@ namespace CNUSLib
 {
     class WUDDiscReaderUncompressed : WUDDiscReader
     {
-        WUDImage image;
-        public WUDDiscReaderUncompressed(WUDImage wudFile)
+        public WUDDiscReaderUncompressed(WUDImage wudFile) : base(wudFile)
         {
-            image = wudFile;
         }
 
         public override void readEncryptedToOutputStream(Stream outputStream, long offset, long size)
@@ -22,7 +20,7 @@ namespace CNUSLib
             //input.Seek(offset, SeekOrigin.Begin);
             input.Seek(offset, SeekOrigin.Begin);
 
-            int bufferSize = 0x8000;
+            int bufferSize = 0x80000;
             byte[] buffer = new byte[bufferSize];
             long totalread = 0;
             do

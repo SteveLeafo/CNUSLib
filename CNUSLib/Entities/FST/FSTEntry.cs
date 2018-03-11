@@ -152,12 +152,14 @@ namespace CNUSLib
 
         public long getFileOffsetBlock()
         {
-            //if(content.isHashed){
-            //    return (fFileOffse)/0xFC00) * 0x10000;
-            //}else{
-            //    return FileOffset();
-            //}
-            return fileOffset;
+            if (content.isHashed())
+            {
+                return (fileOffset / 0xFC00) * 0x10000;
+            }
+            else
+            {
+                return fileOffset;
+            }
         }
 
         public void printRecursive(int space)

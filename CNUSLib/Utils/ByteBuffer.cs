@@ -114,18 +114,32 @@ namespace CNUSLib
             }
         }
 
+        public byte[] putInt(int n)
+        {
+            byte[] ar = BitConverter.GetBytes(n).Reverse().ToArray();
+            Array.ConstrainedCopy(ar, 0, buffer, currentPos, 0x04);
+            currentPos += 4;
+            return buffer;
+        }
+
         public byte[] putLong(long l)
         {
             byte[] ar = BitConverter.GetBytes(l).Reverse().ToArray();
             Array.ConstrainedCopy(ar, 0, buffer, currentPos, 0x08);
+            currentPos += 8;
             return buffer;
         }
-
 
         public byte[] putShort(short p)
         {
             byte[] ar = BitConverter.GetBytes(p).Reverse().ToArray();
             Array.ConstrainedCopy(ar, 0, buffer, currentPos, 0x02);
+            currentPos += 2;
+            return buffer;
+        }
+
+        internal byte[] array()
+        {
             return buffer;
         }
     }
