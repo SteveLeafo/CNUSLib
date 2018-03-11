@@ -17,7 +17,7 @@ The following features have not yet been ported to .NET (though they are planned
  
 # Differences to JNUSLib
 
-CNUSLib was written to add image file support to [Budford](https://github.com/Maschell/JNUSLib) you should check it out!
+CNUSLib was written to add image file support to [Budford](https://github.com/SteveLeafo/Budford) you should check it out!
 
 # Credits
 SteveLeafo
