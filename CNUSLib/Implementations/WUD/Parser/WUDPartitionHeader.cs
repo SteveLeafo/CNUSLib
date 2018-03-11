@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace CNUSLib
 {
     public class WUDPartitionHeader
     {
+        private static TraceSource log = new TraceSource("WUDPartitionHeader");
+
         public bool calculatedHashes = false;
         public Dictionary<short, byte[]> h3Hashes = new Dictionary<short, byte[]>();
         public byte[] rawData;
@@ -33,7 +36,7 @@ namespace CNUSLib
         {
             if (content == null)
             {
-                //MessageBox.Show("Can't find h3 hash, given content is null.");
+                log.TraceEvent(TraceEventType.Error, 0, "Can't find h3 hash, given content is null.");
                 return null;
             }
 
@@ -54,13 +57,6 @@ namespace CNUSLib
             // We have to make sure, that the list is ordered by index
             List<Content> contents = new List<Content>(allContents.Values);
             contents.Sort(delegate(Content c1, Content c2) { return c1.index.CompareTo(c2.index); });
-            // TODO
-            //Collections.sort(contents, new Comparator<Content>() {
-            //    @Override
-            //    public int compare(Content o1, Content o2) {
-            //        return Short.compare(o1.getIndex(), o2.getIndex());
-            //    }
-            //});
 
             foreach (Content c in allContents.Values)
             {
@@ -75,11 +71,10 @@ namespace CNUSLib
                 byte[] hash = Arrays.copyOfRange(header, start_offset + offset * 0x14, start_offset + (offset + cnt_hashes) * 0x14);
 
                 // Checking the hash of the h3 file.
-                // TODO
-                //if (!Arrays.Equals(HashUtil.hashSHA1(hash), c.getSHA2Hash()))
-                //{
-                //    MessageBox.Show("h3 incorrect from WUD");
-                //}
+                if (!Arrays.Equals(HashUtil.hashSHA1(hash), c.SHA2Hash))
+                {
+                    log.TraceEvent(TraceEventType.Error, 0, "h3 incorrect from WUD");
+                }
 
                 addH3Hashes(c.index, hash);
                 offset += cnt_hashes;

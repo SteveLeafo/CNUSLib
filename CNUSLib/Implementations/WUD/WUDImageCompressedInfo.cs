@@ -33,8 +33,8 @@ namespace CNUSLib
                 return;
             }
 
-            int magic0 = Utils.SwapEndianness(BitConverter.ToInt32(headData, 0x00));
-            int magic1 = Utils.SwapEndianness(BitConverter.ToInt32(headData, 0x04));
+            int magic0 = BitConverter.ToInt32(headData, 0x00);
+            int magic1 = BitConverter.ToInt32(headData, 0x04);
 
             if (magic0 == WUX_MAGIC_0 && magic1 == WUX_MAGIC_1)
             {
@@ -45,9 +45,9 @@ namespace CNUSLib
                 valid = false;
             }
 
-            sectorSize = Utils.SwapEndianness(BitConverter.ToInt32(headData, 0x08));
-            flags = Utils.SwapEndianness(BitConverter.ToInt32(headData, 0x0c));
-            uncompressedSize = Utils.SwapEndianness(BitConverter.ToInt32(headData, 0x10));
+            sectorSize = BitConverter.ToInt32(headData, 0x08);
+            flags = BitConverter.ToInt32(headData, 0x0c);
+            uncompressedSize = BitConverter.ToInt64(headData, 0x10);
 
             calculateOffsets();
         }

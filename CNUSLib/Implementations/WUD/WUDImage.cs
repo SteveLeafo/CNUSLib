@@ -50,11 +50,11 @@ namespace CNUSLib
                 int cur_offset = 0x00;
                 for (long i = 0; i < compressedInfo.indexTableEntryCount; i++)
                 {
-                    indexTable[(int)i] = Utils.SwapEndianness(BitConverter.ToInt32(tableData, (int)cur_offset));
+                    indexTable[(int)i] = BitConverter.ToInt32(tableData, (int)cur_offset);
                     cur_offset += 0x04;
                 }
                 compressedInfo.indexTable = indexTable;
-                //compressedInfo = compressedInfo;
+                this.compressedInfo = compressedInfo;
             }
             else
             {
@@ -84,7 +84,7 @@ namespace CNUSLib
                 this.WUDDiscReader = new WUDDiscReaderUncompressed(this);
             }
 
-            //fileStream.close();
+            fileStream.Close();
             this.fileHandle = file;
         }
 
