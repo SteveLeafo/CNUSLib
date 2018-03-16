@@ -147,7 +147,7 @@ namespace CNUSLib
             {
                 decryptFSTEntryFromStreams(min, outputStream, fileSize, fileOffset, c);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //MessageBox.Show("Hash doesn't match");
                 //if (entry.getFilename().endsWith(".xml")) {

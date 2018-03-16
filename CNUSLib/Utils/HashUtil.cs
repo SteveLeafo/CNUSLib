@@ -16,7 +16,7 @@ namespace CNUSLib
             {
                 sha1 = new SHA1CryptoServiceProvider();
             }
-            catch (Exception  e)
+            catch (Exception)
             {
                 //e.printStackTrace();
                 return new byte[0x14];

@@ -60,7 +60,7 @@ namespace CNUSLib
                 {
                     outputStream.Write(buffer, 0, bytesToRead);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     //if (e.getMessage().equals("Pipe closed")) {
                     //    break;
