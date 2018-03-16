@@ -28,7 +28,6 @@ namespace CNUSLib
 
         public List<FSTEntry> getFSTEntriesFlatByContent(Content content)
         {
-            return new List<FSTEntry>();
             return getFSTEntriesFlatByContents(new List<Content>(new Content[] { content }));
         }
 

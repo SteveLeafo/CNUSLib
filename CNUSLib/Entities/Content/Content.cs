@@ -158,7 +158,7 @@ namespace CNUSLib
             return result;
         }
 
-        public bool Equals(Object obj)
+        public override bool Equals(Object obj)
         {
             if (this == obj) return true;
             if (obj == null) return false;

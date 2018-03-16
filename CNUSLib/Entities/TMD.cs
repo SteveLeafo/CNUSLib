@@ -162,7 +162,7 @@ namespace CNUSLib
             {
                 buffer.get(cert2, 0, CERT2_LENGTH);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -171,7 +171,7 @@ namespace CNUSLib
             {
                 buffer.get(cert1, 0, CERT1_LENGTH);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

@@ -163,7 +163,6 @@ namespace CNUSLib
 
             return discReader.readDecryptedToByteArray(Settings.WIIU_DECRYPTED_AREA_OFFSET + (long)partition.partitionOffset + (long)info.getOffset(),
                     entry.fileOffset, (int)entry.fileSize, key, IV);
-            return null;
         }
 
         private static FSTEntry getEntryByName(FSTEntry root, String name)
